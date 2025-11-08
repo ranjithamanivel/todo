@@ -1,0 +1,21 @@
+<h1 style="background-color: yellow;color: black;">To-Do-List</h1>
+<input id="inputbox" style="background-color: aquamarine;padding: 5px;">
+<button onclick="update()" style="background-color: green;padding: 5px;">add</button>
+<ol id="three">
+    <li>Hello <button id="one" onclick="deleteitem(event)" style="background-color: red;">delete</button>
+    </li>
+</ol>
+<script>
+    var one=document.getElementById("one")
+    var inputbox=document.getElementById("inputbox")
+    var ol=document.getElementById("three")
+    function deleteitem(event){
+       event.target.parentElement.remove()
+    }
+    function update(){
+        var no=document.createElement("li")
+        no.innerHTML=inputbox.value + "<button onclick='deleteitem(event)' style='background-color:red;'>Delete</button>"
+        ol.append(no)                      //this place you "" means\"deleteitem(event)\"
+
+    }
+</script>
